@@ -49,7 +49,7 @@ Comparative-ECG-Analysis/
 
 Step 1: Clone the Repository
 
-git clone https://github.com/yourusername/Comparative-ECG-Analysis.git
+git clone comparision_of_differnt_model_conditions_for_ecg-classification.ipynb
 cd Comparative-ECG-Analysis
 
 Step 2: Install Dependencies
