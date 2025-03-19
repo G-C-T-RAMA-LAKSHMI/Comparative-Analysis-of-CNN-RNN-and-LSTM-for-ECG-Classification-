@@ -82,25 +82,25 @@ LSTM (Accuracy, Case)
 
 # Dependencies
 
-Python 3.x
+- Python 3.x
 
-TensorFlow
+- TensorFlow
 
-NumPy
+- NumPy
 
-Pandas
+- Pandas
 
-Scikit-learn
+- Scikit-learn
 
-Imbalanced-learn
+- Imbalanced-learn
 
 # How to Run
 
-Install dependencies:
+- Install dependencies:
 
 pip install tensorflow pandas numpy scikit-learn imbalanced-learn
 
-Run the script:
+- Run the script:
 
 python ecg_classification.py
 
