@@ -2,86 +2,108 @@ Comparative Analysis of CNN, RNN, and LSTM for ECG Classification
 
 Overview
 
-This project explores the comparative performance of Convolutional Neural Networks (CNN), Recurrent Neural Networks (RNN), and Long Short-Term Memory (LSTM) networks for classifying ECG signals. The models help in diagnosing cardiovascular conditions by identifying different types of heartbeats.
+This project conducts a comparative analysis of Convolutional Neural Networks (CNN), Recurrent Neural Networks (RNN), and Long Short-Term Memory (LSTM) networks for classifying ECG signals. The analysis evaluates different architectures and kernel sizes to determine the most effective model for ECG classification.
 
-📌 Key Features
+Dataset
 
-Data Preprocessing:
+The dataset used is filtered_ptbxl_data.csv, which contains ECG signal data with labels indicating whether the ECG is normal or indicative of myocardial infarction (IMI).
 
-Normalization of ECG signal features
+Key Features
 
-Handling class imbalance using SMOTE (Synthetic Minority Over-sampling Technique)
+Preprocessing:
 
-Model Architectures:
+Filtering and labeling ECG signals based on scp_codes.
 
-CNN: Captures spatial patterns in ECG signals
+Handling missing values using mean imputation.
 
-RNN: Recognizes sequential dependencies in time-series data
+Addressing class imbalance using SMOTE.
 
-LSTM: Handles long-term dependencies in ECG sequences
+Standardizing features with StandardScaler.
 
-Model Evaluation:
+Model Training & Evaluation:
 
-Accuracy, Precision, Recall, and Confusion Matrix
+Training CNN, RNN, and LSTM models with different architectures.
 
-Comparative analysis using bar graphs
+Experimenting with kernel sizes (3, 5, 7) for CNN.
 
-📂 Project Structure
+Evaluating models based on accuracy scores.
 
-Comparative-ECG-Analysis/
-│── data/
-│   ├── filtered_ptbxl_data.csv       # ECG dataset
-│── preprocessing/
-│   ├── preprocessing.py               # Data preprocessing (scaling, SMOTE, etc.)
-│── models/
-│   ├── cnn_model.py                   # CNN model
-│   ├── rnn_model.py                   # RNN model
-│   ├── lstm_model.py                  # LSTM model
-│── evaluation/
-│   ├── evaluate.py                     # Model evaluation (accuracy, precision, recall)
-│── visualization/
-│   ├── visualize.py                    # Graphs comparing models
-│── main.py                              # Runs all models and generates comparisons
-│── requirements.txt                      # Required libraries
-│── README.md                            # Project documentation
+Identifying the best model configuration for each kernel size.
 
-🛠 Installation
+Model Configurations
 
-Step 1: Clone the Repository
+The study tests five configurations of Conv1D layers (cl_values) and Dense layers (dl_values) across CNN, RNN, and LSTM models:
 
-git clone comparision_of_differnt_model_conditions_for_ecg-classification.ipynb
-cd Comparative-ECG-Analysis
+cl_values: [8], dl_values: [8]
 
-Step 2: Install Dependencies
+cl_values: [8, 16], dl_values: [16, 8]
 
-pip install -r requirements.txt
+cl_values: [8, 16], dl_values: [32, 16, 8]
 
-Step 3: Run the Project
+cl_values: [8, 16, 32], dl_values: [32, 16, 8]
 
-1️⃣ Preprocess Data
+cl_values: [8, 16, 32], dl_values: [64, 32, 16, 8]
 
-python preprocessing/preprocessing.py
+Results
 
-2️⃣ Train Models
+Best accuracy scores for each model type across different kernel sizes:
 
-python models/cnn_model.py
-python models/rnn_model.py
-python models/lstm_model.py
+Kernel Size
 
-3️⃣ Evaluate Models
+CNN (Accuracy, Case)
 
-python evaluation/evaluate.py
+RNN (Accuracy, Case)
 
-4️⃣ Visualize Results
+LSTM (Accuracy, Case)
 
-python visualization/visualize.py
+3
 
-📊 Results
+0.7867, Case 5
 
-Models are evaluated using Accuracy, Precision, and Recall.
+0.7802, Case 1
 
-Bar graphs illustrate the performance comparison of CNN, RNN, and LSTM models.
+0.7694, Case 1
 
-📌 Conclusion
+5
 
-This project provides insights into the strengths of CNN, RNN, and LSTM for ECG classification. The comparison helps in choosing the best model for healthcare applications.
+0.7912, Case 5
+
+0.7836, Case 5
+
+0.7710, Case 5
+
+7
+
+0.7962, Case 3
+
+0.7828, Case 5
+
+0.7760, Case 2
+
+Dependencies
+
+Python 3.x
+
+TensorFlow
+
+NumPy
+
+Pandas
+
+Scikit-learn
+
+Imbalanced-learn
+
+How to Run
+
+Install dependencies:
+
+pip install tensorflow pandas numpy scikit-learn imbalanced-learn
+
+Run the script:
+
+python ecg_classification.py
+
+Conclusion
+
+The CNN model with kernel size 7 and configuration 3 achieved the highest accuracy (0.7962), making it the most effective model for ECG classification in this study. Further improvements could be made by fine-tuning hyperparameters and incorporating additional ECG signal features.
