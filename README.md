@@ -1,52 +1,87 @@
-**Comparative Analysis of CNN, RNN, and LSTM for ECG Classification**
+Comparative Analysis of CNN, RNN, and LSTM for ECG Classification
 
-This project demonstrates the use of Convolutional Neural Networks (CNN), Recurrent Neural Networks (RNN), and Long Short-Term Memory (LSTM) networks to classify ECG signals for healthcare diagnostics. The project involves the application of various deep learning architectures to address the problem of ECG signal classification.
+Overview
 
-**Overview**
-The project explores the comparative performance of three different deep learning models: CNN, RNN, and LSTM. The models are trained and evaluated using ECG data to classify different types of heartbeats, helping in diagnosing cardiovascular conditions.
+This project explores the comparative performance of Convolutional Neural Networks (CNN), Recurrent Neural Networks (RNN), and Long Short-Term Memory (LSTM) networks for classifying ECG signals. The models help in diagnosing cardiovascular conditions by identifying different types of heartbeats.
 
-**Key Features**
+📌 Key Features
 
-**Data Preprocessing:**
+Data Preprocessing:
 
-ECG signals are preprocessed by normalizing features.
-SMOTE (Synthetic Minority Over-sampling Technique) is applied to address class imbalance.
+Normalization of ECG signal features
 
-**Model Architectures:**
+Handling class imbalance using SMOTE (Synthetic Minority Over-sampling Technique)
 
-CNN: A Convolutional Neural Network used to capture spatial features in ECG signals.
-RNN: A Recurrent Neural Network employed to capture sequential dependencies.
-LSTM: A Long Short-Term Memory network designed for sequential data with long-term dependencies.
+Model Architectures:
 
-**Model Evaluation:**
+CNN: Captures spatial patterns in ECG signals
 
-Performance metrics include accuracy, precision, recall, and confusion matrix.
-Comparison of the models through bar graphs showing the accuracy, precision, and recall of each architecture.
-Installation
+RNN: Recognizes sequential dependencies in time-series data
 
+LSTM: Handles long-term dependencies in ECG sequences
 
-**Data Preprocessing:**
+Model Evaluation:
 
-The raw ECG data is preprocessed in the preprocessing.py file.
+Accuracy, Precision, Recall, and Confusion Matrix
 
-**Model Training:**
+Comparative analysis using bar graphs
 
-You can train each model by running the corresponding scripts:
-For CNN: cnn_model.py
-For RNN: rnn_model.py
-For LSTM: lstm_model.py
+📂 Project Structure
 
-**Model Evaluation:**
+Comparative-ECG-Analysis/
+│── data/
+│   ├── filtered_ptbxl_data.csv       # ECG dataset
+│── preprocessing/
+│   ├── preprocessing.py               # Data preprocessing (scaling, SMOTE, etc.)
+│── models/
+│   ├── cnn_model.py                   # CNN model
+│   ├── rnn_model.py                   # RNN model
+│   ├── lstm_model.py                  # LSTM model
+│── evaluation/
+│   ├── evaluate.py                     # Model evaluation (accuracy, precision, recall)
+│── visualization/
+│   ├── visualize.py                    # Graphs comparing models
+│── main.py                              # Runs all models and generates comparisons
+│── requirements.txt                      # Required libraries
+│── README.md                            # Project documentation
 
-Evaluate the performance of each model using the scripts located in the evaluation/ directory. Metrics like accuracy, precision, and recall are provided.
+🛠 Installation
 
-**Visualizing Results:**
+Step 1: Clone the Repository
 
-The visualization.py script generates bar graphs comparing the performance of CNN, RNN, and LSTM models.
+git clone https://github.com/yourusername/Comparative-ECG-Analysis.git
+cd Comparative-ECG-Analysis
 
-**Results**
-The models are evaluated using confusion matrix, accuracy, precision, and recall. The results are visualized to help compare model performance in a clear and understandable manner.
+Step 2: Install Dependencies
 
+pip install -r requirements.txt
 
-**Conclusion**
-This project provides insights into the use of CNN, RNN, and LSTM architectures for ECG signal classification. The comparison of different models assists in selecting the optimal architecture for healthcare applications involving ECG signal analysis.
+Step 3: Run the Project
+
+1️⃣ Preprocess Data
+
+python preprocessing/preprocessing.py
+
+2️⃣ Train Models
+
+python models/cnn_model.py
+python models/rnn_model.py
+python models/lstm_model.py
+
+3️⃣ Evaluate Models
+
+python evaluation/evaluate.py
+
+4️⃣ Visualize Results
+
+python visualization/visualize.py
+
+📊 Results
+
+Models are evaluated using Accuracy, Precision, and Recall.
+
+Bar graphs illustrate the performance comparison of CNN, RNN, and LSTM models.
+
+📌 Conclusion
+
+This project provides insights into the strengths of CNN, RNN, and LSTM for ECG classification. The comparison helps in choosing the best model for healthcare applications.
